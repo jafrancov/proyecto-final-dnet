@@ -4,48 +4,56 @@
     ViewData["Title"] = "Index";
 }
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Agregar Promoción</a>
-</p>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Descuento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaInicio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaFin)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Productos)
-            </th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descuento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaInicio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaFin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Productos.NombreProducto)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.PromocionID" class="btn btn-outline-primary btn-sm">Editar</a> 
-                <a asp-action="Details" asp-route-id="@item.PromocionID" class="btn btn-outline-success btn-sm">Detalle</a> 
-                <a asp-action="Delete" asp-route-id="@item.PromocionID" class="btn btn-outline-danger btn-sm">Eliminar</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="container">
+
+    <div>
+        <p>
+            <a asp-action="Create" class="btn btn-outline-success fas fa-plus btn-lg ">Promoción</a>
+        </p>
+    </div>
+    <div class="row col-md-12">
+        <table class="table table-bordered table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Descuento)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FechaInicio)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FechaFin)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Productos)
+                    </th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descuento)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaInicio)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaFin)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Productos.NombreProducto)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.PromocionID" class="btn btn-outline-primary btn-sm fas fa-edit" title="Editar"></a>
+                            <a asp-action="Details" asp-route-id="@item.PromocionID" class="btn btn-outline-success btn-sm fas fa-eye" title="Ver Detalles"></a>
+                            <a asp-action="Delete" asp-route-id="@item.PromocionID" class="btn btn-outline-danger btn-sm fas fa-trash-alt"  title="Eliminar"></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        </div>
+    </div>

@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Proyecto.Models;
+using ProyectoFinal.Models;
 
 namespace ProyectoFinal.Data
 {
@@ -39,5 +40,6 @@ namespace ProyectoFinal.Data
         public DbSet<Pedidos> Pedidos { get; set; }
         public DbSet<Productos> Productos { get; set; }
         public DbSet<Promociones> Promociones { get; set; }
+        public DbSet<Carrito> Carrito { get; set; }
     }
 }

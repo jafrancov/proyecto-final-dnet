@@ -4,39 +4,38 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
 
-<div>
-    <h4>Promociones</h4>
+<div class="container">
+    <h2>Detalles de Promoción</h2>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
+    <dl class="row col-md-12">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Descuento)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Descuento)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FechaInicio)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FechaInicio)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FechaFin)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FechaFin)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Productos)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Productos.NombreProducto)
         </dd>
     </dl>
+    <div>
+        <a asp-action="Index">Regresar a lista principal</a>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.PromocionID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+

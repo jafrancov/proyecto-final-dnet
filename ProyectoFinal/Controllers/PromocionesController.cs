@@ -11,7 +11,7 @@ using ProyectoFinal.Data;
 
 namespace ProyectoFinal.Controllers
 {
-    [Authorize(Roles = "Administrador")]
+    //[Authorize(Roles = "Administrador")]
     public class PromocionesController : Controller
     {
         private readonly ApplicationDbContext _context;

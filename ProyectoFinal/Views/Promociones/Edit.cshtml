@@ -4,44 +4,44 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
-
-<h4>Promociones</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="PromocionID" />
-            <div class="form-group">
-                <label asp-for="Descuento" class="control-label"></label>
-                <input asp-for="Descuento" class="form-control" />
-                <span asp-validation-for="Descuento" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaInicio" class="control-label"></label>
-                <input asp-for="FechaInicio" class="form-control" />
-                <span asp-validation-for="FechaInicio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaFin" class="control-label"></label>
-                <input asp-for="FechaFin" class="form-control" />
-                <span asp-validation-for="FechaFin" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductoID" class="control-label"></label>
-                <select asp-for="ProductoID" class="form-control" asp-items="ViewBag.ProductoID"></select>
-                <span asp-validation-for="ProductoID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="container">
+    <h2>Editar Promoción</h2>
+    <hr />
+    <div class="row col-md-12">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="PromocionID" />
+                <div class="form-group font-weight-bold">
+                    <label asp-for="Descuento" class="control-label">Descuento</label>
+                    <input asp-for="Descuento" class="form-control" />
+                    <span asp-validation-for="Descuento" class="text-danger"></span>
+                </div>
+                <div class="form-group font-weight-bold">
+                    <label asp-for="FechaInicio" class="control-label">Fecha Inicial</label>
+                    <input asp-for="FechaInicio" class="form-control" />
+                    <span asp-validation-for="FechaInicio" class="text-danger"></span>
+                </div>
+                <div class="form-group font-weight-bold">
+                    <label asp-for="FechaFin" class="control-label">Fecha Final</label>
+                    <input asp-for="FechaFin" class="form-control" />
+                    <span asp-validation-for="FechaFin" class="text-danger"></span>
+                </div>
+                <div class="form-group font-weight-bold">
+                    <label asp-for="ProductoID" class="control-label">Producto</label>
+                    <select asp-for="ProductoID" class="form-control" asp-items="ViewBag.ProductoID"></select>
+                    <span asp-validation-for="ProductoID" class="text-danger"></span>
+                </div>
+                <div class="form-group font-weight-bold">
+                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div>
+        <a asp-action="Index">Regresar a lista principal</a>
+    </div>
 </div>
 
 @section Scripts {

@@ -25,4 +25,49 @@
     <Folder Include="Data\Migrations\" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <None Include="wwwroot\scss\addons\_datatables-select.scss" />
+    <None Include="wwwroot\scss\addons\_datatables.scss" />
+    <None Include="wwwroot\scss\addons\_directives.scss" />
+    <None Include="wwwroot\scss\core\bootstrap\_functions.scss" />
+    <None Include="wwwroot\scss\core\bootstrap\_rfs.scss" />
+    <None Include="wwwroot\scss\core\bootstrap\_variables.scss" />
+    <None Include="wwwroot\scss\core\_colors.scss" />
+    <None Include="wwwroot\scss\core\_global.scss" />
+    <None Include="wwwroot\scss\core\_helpers.scss" />
+    <None Include="wwwroot\scss\core\_masks.scss" />
+    <None Include="wwwroot\scss\core\_mixins.scss" />
+    <None Include="wwwroot\scss\core\_typography.scss" />
+    <None Include="wwwroot\scss\core\_variables.scss" />
+    <None Include="wwwroot\scss\core\_waves.scss" />
+    <None Include="wwwroot\scss\free\modules\animations-extended\animations-extended.scss" />
+    <None Include="wwwroot\scss\free\modules\animations-extended\_module.scss" />
+    <None Include="wwwroot\scss\free\_animations-basic.scss" />
+    <None Include="wwwroot\scss\free\_badges.scss" />
+    <None Include="wwwroot\scss\free\_buttons.scss" />
+    <None Include="wwwroot\scss\free\_cards.scss" />
+    <None Include="wwwroot\scss\free\_carousels.scss" />
+    <None Include="wwwroot\scss\free\_depreciated.scss" />
+    <None Include="wwwroot\scss\free\_dropdowns.scss" />
+    <None Include="wwwroot\scss\free\_footers.scss" />
+    <None Include="wwwroot\scss\free\_forms.scss" />
+    <None Include="wwwroot\scss\free\_input-group.scss" />
+    <None Include="wwwroot\scss\free\_list-group.scss" />
+    <None Include="wwwroot\scss\free\_loader.scss" />
+    <None Include="wwwroot\scss\free\_modals.scss" />
+    <None Include="wwwroot\scss\free\_msc.scss" />
+    <None Include="wwwroot\scss\free\_navbars.scss" />
+    <None Include="wwwroot\scss\free\_pagination.scss" />
+    <None Include="wwwroot\scss\free\_steppers.scss" />
+    <None Include="wwwroot\scss\free\_switch.scss" />
+    <None Include="wwwroot\scss\free\_tables.scss" />
+    <None Include="wwwroot\scss\mdb.lite.scss" />
+    <None Include="wwwroot\scss\mdb.scss" />
+    <None Include="wwwroot\scss\style.scss" />
+    <None Include="wwwroot\scss\_custom-skin.scss" />
+    <None Include="wwwroot\scss\_custom-styles.scss" />
+    <None Include="wwwroot\scss\_custom-variables.scss" />
+  </ItemGroup>
+
 </Project>

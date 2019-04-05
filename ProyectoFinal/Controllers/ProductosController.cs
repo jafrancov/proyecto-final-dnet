@@ -13,7 +13,7 @@ using ProyectoFinal.Data;
 
 namespace ProyectoFinal.Controllers
 {
-    [Authorize(Roles = "Administrador")]
+    //[Authorize(Roles = "Administrador")]
     public class ProductosController : Controller
     {
         private readonly ApplicationDbContext _context;
