@@ -34,3 +34,7 @@ body,
 .contenido-central {
     margin-top: 25px;
 }
+
+#carousel-example-1z {
+    padding: 0 !important;
+}

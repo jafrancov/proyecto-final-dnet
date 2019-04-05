@@ -7,7 +7,7 @@
 <div class="container">
     <div>
         <p>
-            <a asp-action="Create" class="btn btn-outline-success fas fa-plus btn-lg ">Cliente</a>
+            <a asp-action="Create" class="btn btn-primary btn-lg "><i class="fas fa-plus"></i> Cliente</a>
         </p>
     </div>
     <div>
@@ -53,10 +53,10 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.TelefonoCliente)
                         </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.ClienteID" class="btn btn-outline-primary btn-sm fas fa-edit" title="Editar"></a> 
-                            <a asp-action="Details" asp-route-id="@item.ClienteID" class="btn btn-outline-success btn-sm fas fa-eye" title="Ver Detalles"></a> 
-                            <a asp-action="Delete" asp-route-id="@item.ClienteID" class="btn btn-outline-danger btn-sm fas fa-trash-alt"  title="Eliminar"></a>
+                        <td>    
+                            <a asp-action="Edit" asp-route-id="@item.ClienteID" class="text-primary" title="Editar"><i class="fas fa-fw fa-lg fa-pencil-alt"></i></a>&nbsp;&nbsp;&nbsp;
+                            <a asp-action="Details" asp-route-id="@item.ClienteID" class="text-info" title="Ver Detalles"><i class="fas fa-fw fa-lg fa-eye"></i></a>&nbsp;&nbsp;&nbsp;
+                            <a asp-action="Delete" asp-route-id="@item.ClienteID" class="text-danger" title="Eliminar"><i class="fas fa-fw fa-lg fa-times"></i></a>
                         </td>
                     </tr>
                 }

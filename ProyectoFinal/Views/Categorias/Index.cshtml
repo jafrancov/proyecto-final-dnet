@@ -8,7 +8,7 @@
 
     <div>
         <p>
-            <a asp-action="Create" class="btn btn-outline-success fas fa-plus btn-lg ">Categoría</a>
+            <a asp-action="Create" class="btn btn-primary btn-lg "><i class="fas fa-plus"></i> Categoría</a>
         </p>
     </div>
     <div class="row col-md-12">
@@ -29,9 +29,9 @@
                             @Html.DisplayFor(modelItem => item.NombreCategoria)
                         </td>
                         <td>
-                            <a asp-action="Edit" asp-route-id="@item.CategoriaID"class="btn btn-outline-primary btn-sm fas fa-edit" title="Editar"></a>
-                            <a asp-action="Details" asp-route-id="@item.CategoriaID"class="btn btn-outline-success btn-sm fas fa-eye" title="Ver Detalles"></a>
-                            <a asp-action="Delete" asp-route-id="@item.CategoriaID" class="btn btn-outline-danger btn-sm fas fa-trash-alt"  title="Eliminar"></a>
+                            <a asp-action="Edit" asp-route-id="@item.CategoriaID" class="text-primary" title="Editar"><i class="fas fa-fw fa-lg fa-pencil-alt"></i></a>&nbsp;&nbsp;&nbsp;
+                            <a asp-action="Details" asp-route-id="@item.CategoriaID" class="text-info" title="Ver Detalles"><i class="fas fa-fw fa-lg fa-eye"></i></a>&nbsp;&nbsp;&nbsp;
+                            <a asp-action="Delete" asp-route-id="@item.CategoriaID" class="text-danger" title="Eliminar"><i class="fas fa-fw fa-lg fa-times"></i></a>
                         </td>
                     </tr>
                 }
