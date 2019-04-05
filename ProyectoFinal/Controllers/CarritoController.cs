@@ -3,29 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Session;
+using Microsoft.AspNetCore.Http;
 using ProyectoFinal.Models;
 using ProyectoFinal.Data;
-
-
+using Newtonsoft.Json;
 
 namespace ProyectoFinal.Controllers
 {
+  
     public class CarritoController : Controller
     {
         private readonly ApplicationDbContext _context;
+        
 
         public CarritoController(ApplicationDbContext context)
         {
             _context = context;
         }
+        
         public IActionResult AgregrarCarrito(int id)
         {
-            if(Session["carrito"]==null)
+            var objCarrito = new SessionExtension();
+            objCarrito = HttpContext.Session.GetObjectFromJson<SessionExtensions>("carrito");
+            if (objCarrito==null)
             {
                 List<CarritoItem> compras = new List<CarritoItem>();
                 compras.Add(new CarritoItem(_context.Productos.Find(id), 1));
-                Session["carrito"] = compras;
+                HttpContext.Session.SetObjectAsJson("carrito", compras);
             }
             else
             {
@@ -34,4 +38,21 @@ namespace ProyectoFinal.Controllers
             return View();
         }
     }
+
+   
+        public static class SessionExtensions
+        {
+        public static void SetObjectAsJson(this ISession session, string key, object value)
+        {
+            session.SetString(key, JsonConvert.SerializeObject(value));
+        }
+
+        public static T GetObjectFromJson<T>(this ISession session, string key)
+        {
+            var value = session.GetString(key);
+
+            return value == null ? default(T) : JsonConvert.DeserializeObject<T>(value);
+        }
+   
+}
 }
