@@ -39,6 +39,7 @@ namespace ProyectoFinal.Controllers
         }
     }
 
+    // agregar a una clase externa
    
         public static class SessionExtensions
         {
