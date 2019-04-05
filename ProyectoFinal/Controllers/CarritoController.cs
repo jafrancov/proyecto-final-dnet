@@ -33,12 +33,35 @@ namespace ProyectoFinal.Controllers
             }
             else
             {
-
+                List<CarritoItem> compras = (List<CarritoItem>HttpContext.Session.GetObjectFromJson<SessionExtensions>("carrito"));
+                int IndexExistente = getIndex(id);
+                if (IndexExistente == -1)
+                    compras.Add(new CarritoItem(_context.Productos.Find(id), 1));
+                else
+                    compras[IndexExistente].Cantidad++;
+                HttpContext.Session.SetObjectAsJson("carrito", compras);
             }
             return View();
         }
-    }
+        private int getIndex(int id)
+        {
+            List<CarritoItem> compras = (List < CarritoItem > HttpContext.Session.GetObjectFromJson<SessionExtensions>("carrito"));
+            for(int i=0; i<compras.Count; i++)
+            {
+                if (compras[i].Productos.ProductoID == id)
+                    return i;
+            }
+            return -1;
+        }
 
+        public IActionResult Delete(int id)
+        {
+            List<CarritoItem> compras = (List < CarritoItem > HttpContext.Session.GetObjectFromJson<SessionExtensions>("carrito"));
+            compras.RemoveAt(getIndex(id));
+            return View("AgregarCarrito");
+        }
+    }
+     
     // agregar a una clase externa
    
         public static class SessionExtensions

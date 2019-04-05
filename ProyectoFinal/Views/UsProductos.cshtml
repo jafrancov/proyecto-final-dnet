@@ -26,7 +26,7 @@
                     <td>@String.Format("{0:C}",item.Precio)</td>
                     <td>@item.Promociones</td>
                     <td>@item.Image</td>
-                    <td>@Html.ActionLink("Agregar","AgregarCarrito","Carrito",new { Id = item.ProductoID })</td>
+                    <td>@Html.ActionLink("Agregar","AgregarCarrito","Carrito",new { Id = item.ProductoID},null)</td>
                 </tr>
 
             }
