@@ -34,6 +34,6 @@ namespace Proyecto.Models
 
         public ICollection<Promociones> Promociones { get; set; }
         public List<DetallePedido> DetallePedido { get; set; }
-        public ICollection<Carrito> Carrito { get; set; }
+        public ICollection<CarritoItem> Carrito { get; set; }
     }
 }
