@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "AgregarCarrito";
+}
+
+<h1>Carrito</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <td>Total</td>
+            <td>Eliminar</td>
+        </tr>
+    </thead>
+    <tbody>
+        @{ 
+            double total =0;
+        }
+
+        @if (Session["carrito"]== null){
+            foreach(var item in Session["carrito"] as List<ProyectoFinal.Models.CarritoItem
+                >)
+            {
+                total += (double)(item.Cantidad * item.Producto.Precio);
+                <tr>
+                    <td>@item.Producto.ProductoID</td>
+                    <td>@item.Producto.NombreProducto</td>
+                    <td>@String.Format("{0:C}", item.Producto.Precio)</td>
+                    <td>@item.Cantidad</td>
+                    <td>@String.Format("{0:C}",(item.Cantidad*item.Producto.Precio))</td>
+                    <td>@Html.ActionLink("Eliminar","Delite","Carrito",new {Id=item.Productos.ProductoID},null)</td>
+                </tr>
+
+            }
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="4">Total</th>
+            <th>@String.Format("{0:C}",total)</th>
+        </tr>
+    </tfoot>
+</table>
+
+@Html.ActionLink("Seguir Comprando", "Index", "UsProductos",null,null);
+

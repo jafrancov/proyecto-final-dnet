@@ -40,6 +40,6 @@ namespace ProyectoFinal.Data
         public DbSet<Pedidos> Pedidos { get; set; }
         public DbSet<Productos> Productos { get; set; }
         public DbSet<Promociones> Promociones { get; set; }
-        public DbSet<Carrito> Carrito { get; set; }
+        public DbSet<CarritoItem> Carrito { get; set; }
     }
 }
