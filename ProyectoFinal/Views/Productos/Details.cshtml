@@ -5,52 +5,55 @@
 }
 
 
+<div class="row wow fadeIn">
 
+    <!--Grid column-->
+    <div class="col-md-6 mb-4">
+        <img src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.Image))">
+    </div>
+    <!--Grid column-->
+    <!--Grid column-->
+    <div class="col-md-6 mb-4">
 
+        <!--Content-->
+        <div class="p-4">
 
-<div class="container">
-    <h2>Detalles de Producto</h2>
-    <hr />
-    <dl class="row col-md-12">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.NombreProducto)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.NombreProducto)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Existencia)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Existencia)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Precio)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Precio)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Descontinuado)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Descontinuado)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Categorias)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Categorias.NombreCategoria)
-        </dd>
-    </dl>
+            <div class="mb-3">
+                <a href="">
+                    <span class="badge purple mr-1">@Html.DisplayNameFor(model => model.Categorias)</span>
+                </a>
+            </div>
+
+            <p class="lead">
+                <span class="mr-1">
+                    <del>$200</del>
+                </span>
+                <span>$100</span>
+            </p>
+
+            <p class="lead font-weight-bold">@Html.DisplayFor(model => model.NombreProducto)</p>
+
+            <p>
+                Existencia: @Html.DisplayFor(model => model.Existencia)
+            </p>
+
+            <form class="d-flex justify-content-left">
+                <!-- Default input -->
+                <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+                <button class="btn btn-primary btn-md my-0 p" type="submit">
+                    Add to cart
+                    <i class="fas fa-shopping-cart ml-1"></i>
+                </button>
+
+            </form>
+
+        </div>
+        <!--Content-->
+
+    </div>
+    <!--Grid column-->
     <div>
         <a asp-action="Index">Regresar a lista principal</a>
     </div>
-</div>
 
+</div>
