@@ -20,6 +20,7 @@ namespace Proyecto.Models
         public int Existencia { get; set; }
 
         [Required]
+        [Range(0.01, 100000.00,ErrorMessage = "El precio debe estar entre 0.01 y 100000.00")]
         public decimal Precio { get; set; }
 
         public bool Descontinuado { get; set; }
@@ -32,6 +33,6 @@ namespace Proyecto.Models
 
         public ICollection<Promociones> Promociones { get; set; }
         public List<DetallePedido> DetallePedido { get; set; }
-        public ICollection<Carrito> Carrito { get; set; }
+        public ICollection<CarritoItem> Carrito { get; set; }
     }
 }

@@ -26,28 +26,13 @@ namespace ProyectoFinal.Controllers
         // GET: Productos
         public async Task<IActionResult> Index()
         {
-            ViewData["Categorias"] = (from c in _context.Categorias select c);
-
             var applicationDbContext = _context.Productos.Include(p => p.Categorias);
             return View(await applicationDbContext.ToListAsync());
-        }
-
-        // LISTAMOS LOS PRODUCTOS POR SU CATEGORIA
-        public IActionResult Listar(int CategoriaID)
-        {
-            ViewData["Categorias"] = (from c in _context.Categorias select c);
-
-            var productosCategoria = (from pc in _context.Productos.Include("Categorias")
-                                      where pc.CategoriaID == CategoriaID
-                                      select pc).ToList();
-            return View(productosCategoria);
         }
 
         // GET: Productos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            ViewData["Categorias"] = (from c in _context.Categorias select c);
-
             if (id == null)
             {
                 return NotFound();
@@ -67,8 +52,6 @@ namespace ProyectoFinal.Controllers
         // GET: Productos/Create
         public IActionResult Create()
         {
-            ViewData["Categorias"] = (from c in _context.Categorias select c);
-
             ViewData["CategoriaID"] = new SelectList(_context.Categorias, "CategoriaID", "NombreCategoria");
             return View();
         }
@@ -80,13 +63,11 @@ namespace ProyectoFinal.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ProductoID,NombreProducto,Existencia,Precio,Descontinuado,Image,CategoriaID")] Productos productos, IList<IFormFile> Image)
         {
-            ViewData["Categorias"] = (from c in _context.Categorias select c);
-
             if (ModelState.IsValid)
             {
                 foreach (var item in Image)
                 {
-                    if (item.Length > 0)
+                    if (item.Length>0)
                     {
                         using (var stream = new MemoryStream())
                         {
@@ -106,8 +87,6 @@ namespace ProyectoFinal.Controllers
         // GET: Productos/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            ViewData["Categorias"] = (from c in _context.Categorias select c);
-
             if (id == null)
             {
                 return NotFound();
@@ -129,8 +108,6 @@ namespace ProyectoFinal.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ProductoID,NombreProducto,Existencia,Precio,Descontinuado,Image,CategoriaID")] Productos productos)
         {
-            ViewData["Categorias"] = (from c in _context.Categorias select c);
-
             if (id != productos.ProductoID)
             {
                 return NotFound();
@@ -163,8 +140,6 @@ namespace ProyectoFinal.Controllers
         // GET: Productos/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            ViewData["Categorias"] = (from c in _context.Categorias select c);
-
             if (id == null)
             {
                 return NotFound();
@@ -186,8 +161,6 @@ namespace ProyectoFinal.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            ViewData["Categorias"] = (from c in _context.Categorias select c);
-
             var productos = await _context.Productos.FindAsync(id);
             _context.Productos.Remove(productos);
             await _context.SaveChangesAsync();
@@ -198,5 +171,7 @@ namespace ProyectoFinal.Controllers
         {
             return _context.Productos.Any(e => e.ProductoID == id);
         }
+
+   
     }
 }
