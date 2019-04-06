@@ -151,10 +151,5 @@ namespace ProyectoFinal.Controllers
         {
             return _context.Categorias.Any(e => e.CategoriaID == id);
         }
-
-        public IActionResult ListaCategorias()
-        {
-            return View(_context.Categorias.ToList().OrderBy(x => x.NombreCategoria));
-        }
     }
 }

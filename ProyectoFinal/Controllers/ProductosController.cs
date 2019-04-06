@@ -198,7 +198,5 @@ namespace ProyectoFinal.Controllers
         {
             return _context.Productos.Any(e => e.ProductoID == id);
         }
-
-   
     }
 }
