@@ -9,6 +9,7 @@ namespace ProyectoFinal.Models
 {
     public class CarritoItem
     {
+        public int CarritoItemID { get; set; }
         private Productos _productos;
         private int _cantidad;
 
